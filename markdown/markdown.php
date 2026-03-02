@@ -21,7 +21,7 @@ return function($content, $replace = []) {
   }
 
   $includes = strpos($content, "@\x20");
-  $content = explode("\n",  $content);
+  $content = explode("\n", $content);
 
   if($includes !== false) {
     $includes = preg_grep("/^\s*(?<!\s{4})@\s+(.+)$/", $content);

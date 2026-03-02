@@ -9,7 +9,7 @@ return function($text, $reference, $attributes = []) {
   if(is_array($attributes)) {
     if(!empty($attributes)) {
       $attributes = array_map(function($attribute, $value) {
-        if(($value = trim($value ? $value : '')) != null) {
+        if(($value = trim(!is_null($value) ? $value : ''))) {
           return "{$attribute}=\"{$value}\"";
         }
       }, array_keys($attributes), $attributes);
